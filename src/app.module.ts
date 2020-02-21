@@ -5,10 +5,12 @@ import { MoviesController } from './movies/movies.controller';
 import { MoviesService } from './movies/movies.service';
 import { MongoClient } from 'mongodb';
 import { MovieRepository } from './data/movies.repository';
+import { MusicController } from './music/music.controller';
+import { MusicService } from './music/music.service';
 
 @Module({
   imports: [],
-  controllers: [AppController, MoviesController],
+  controllers: [AppController, MoviesController, MusicController],
   providers: [
     {
       provide: 'DB',
@@ -19,7 +21,8 @@ import { MovieRepository } from './data/movies.repository';
     },
     AppService,
     MoviesService,
-    MovieRepository
+    MovieRepository,
+    MusicService
   ]
 })
 export class AppModule {}
